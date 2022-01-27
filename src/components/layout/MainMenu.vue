@@ -1,14 +1,14 @@
 <template>
-  <div class="left-menu">
+  <div class="main-menu">
     <div class="logo">
       <logo :width="256"
             :height="64"/>
     </div>
-    <div class="left-menu__list">
-      <left-menu-item v-for="(item, index) in menuItems"
+    <nav class="main-menu__list">
+      <main-menu-item v-for="(item, index) in menuItems"
                       :key="index"
                       :menu-item="item"/>
-    </div>
+    </nav>
     <div class="user">
       <img :src="userData.photoSrc"
            width="48"
@@ -24,13 +24,13 @@
 
 <script>
 import Logo from "@/components/icons/Logo"
-import LeftMenuItem from "@/components/layout/LeftMenuItem"
+import MainMenuItem from "@/components/layout/MainMenuItem"
 
 export default {
-  name: 'LeftMenu',
+  name: 'MainMenu',
   components: {
     Logo,
-    LeftMenuItem
+    MainMenuItem
   },
   data() {
     return {
@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.left-menu {
+.main-menu {
   display: flex;
   flex-direction: column;
   min-height: 100vh;

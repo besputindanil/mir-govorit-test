@@ -1,20 +1,26 @@
 <template>
   <div class="main-page">
-    <left-menu />
+    <main-menu />
+    <page-content />
   </div>
 </template>
 
 <script>
-import LeftMenu from '@/components/layout/LeftMenu'
+import MainMenu from '@/components/layout/MainMenu'
+import PageContent from '@/components/layout/PageContent'
 
 export default {
   name: 'MainPage',
   components: {
-    LeftMenu
+    MainMenu,
+    PageContent
   }
 }
 </script>
 
 <style lang="scss" scoped>
-
+.main-page {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
 </style>

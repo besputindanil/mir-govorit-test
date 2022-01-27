@@ -27,7 +27,7 @@
 <script>
 import ArrowIcon from "@/components/icons/ArrowIcon";
 export default {
-  name: 'LeftMenuItem',
+  name: 'MainMenuItem',
   components: {ArrowIcon},
   props: {
     menuItem: {
