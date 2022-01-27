@@ -12,5 +12,6 @@
 }
 .app {
   font-family: Inter, Arial, sans-serif;
+  color: #191919;
 }
 </style>
