@@ -14,7 +14,6 @@ export default {
   display: block;
   width: 18px;
   height: 12px;
-  margin-right: 43px;
 
   background-color: transparent;
   border: none;
