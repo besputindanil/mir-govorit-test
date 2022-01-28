@@ -17,7 +17,7 @@
         <span class="block__icon">
             <clock-icon color="#C4C4C4" />
         </span>
-        <span class="block__title">{{ preparedDuration }}</span>
+        <span class="block__title">{{ formattedDuration }}</span>
       </div>
       <div v-if="dateStart"
            class="block">
@@ -64,9 +64,7 @@ import ClockIcon from "@/components/icons/ClockIcon"
 import CalendarIcon from "@/components/icons/CalendarIcon"
 import CardButton from "@/components/elements/CardButton"
 import {CARDS_TYPE} from "@/utils/cards"
-import {formatDate} from '@/utils/formatters'
-import { formatDuration } from 'date-fns'
-import {ru} from "date-fns/locale"
+import {formatDate, createFormattedDuration, getDuration} from '@/utils/formatters'
 
 export default {
   name: 'SeminarCardsListItem',
@@ -135,9 +133,19 @@ export default {
           return
       }
     },
-    preparedDuration() {
-      const duration = { weeks: this.duration }
-      return  formatDuration(duration, {format: ['months', 'weeks'], locale: ru})
+    formattedDuration() {
+      const durationOptions = { weeks: this.duration }
+      const weeksDuration =   createFormattedDuration(durationOptions, {format: ['weeks']})
+
+      let monthsDuration = null
+
+      if (this.dateStart) {
+        const intervalToDuration = getDuration(this.dateStart, durationOptions)
+        const { months } = intervalToDuration
+        monthsDuration = createFormattedDuration({ months }, {format: ['months']})
+      }
+
+      return monthsDuration || weeksDuration
     },
     formattedDateStart() {
       return formatDate(this.dateStart)
