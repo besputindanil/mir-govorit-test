@@ -23,7 +23,11 @@ export default {
   display: grid;
   grid-template-columns: minmax(320px, 1fr) 3fr;
 
-  @media only screen and (max-width: 1050px) {
+  @media only screen and (max-width: 1024px) {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  @media only screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: center;

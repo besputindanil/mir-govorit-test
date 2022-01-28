@@ -45,16 +45,16 @@
         {{ methodist }}
       </span>
     </div>
-    <my-button v-if="isSeminarType"
+    <card-button v-if="isSeminarType"
                orange
                class="card__button">
       <span>{{ price }} ₽</span>
-    </my-button>
-    <my-button v-else-if="isTrainingType"
+    </card-button>
+    <card-button v-else-if="isTrainingType"
                blue
                class="card__button">
       Выбрать тариф
-    </my-button>
+    </card-button>
   </div>
 </template>
 
@@ -62,7 +62,7 @@
 import LayersIcon from "@/components/icons/LayersIcon"
 import ClockIcon from "@/components/icons/ClockIcon"
 import CalendarIcon from "@/components/icons/CalendarIcon"
-import MyButton from "@/components/elements/MyButton"
+import CardButton from "@/components/elements/CardButton"
 import {CARDS_TYPE} from "@/utils/cards"
 import {formatDate} from '@/utils/formatters'
 import { formatDuration } from 'date-fns'
@@ -74,7 +74,7 @@ export default {
     LayersIcon,
     ClockIcon,
     CalendarIcon,
-    MyButton
+    CardButton
   },
   props: {
     title: {
@@ -148,6 +148,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
+  width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 320px;
@@ -169,6 +170,10 @@ export default {
   &__button {
     align-self: flex-end;
     margin-top: auto;
+  }
+
+  @media only screen and (max-width: 767px) {
+    min-height: 288px;
   }
 }
 

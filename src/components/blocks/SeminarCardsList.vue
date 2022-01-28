@@ -46,6 +46,12 @@ export default {
     @media only screen and (max-width: 1100px) {
       grid-template-columns: repeat(2, minmax(224px, 1fr));
     }
+
+    @media only screen and (max-width: 767px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 }
 </style>

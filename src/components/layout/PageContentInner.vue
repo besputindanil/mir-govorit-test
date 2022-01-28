@@ -4,7 +4,8 @@
                  :topic="author.topic"
                  :name="author.name"
                  :avatar="author.avatar"
-                 :description="author.description" />
+                 :description="author.description"
+                 class="content__author" />
     <seminar-cards-list v-if="seminars"
                         :seminars="seminars" />
   </main>
@@ -29,3 +30,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.content {
+  display: flex;
+  flex-direction: column;
+
+  &__author {
+    margin-bottom: 24px;
+  }
+}
+</style>

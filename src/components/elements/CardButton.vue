@@ -1,5 +1,5 @@
 <template>
-  <div class="button orange"
+  <div class="card-button text-white"
        :class="{
           'orange': orange,
           'blue': blue
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'MyButton',
+  name: 'CardButton',
   props: {
     orange: {
       type: Boolean,
@@ -24,7 +24,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.button {
+.card-button {
   display: flex;
   padding: 8px 16px;
   color: #ffffff;
