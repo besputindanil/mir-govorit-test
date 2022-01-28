@@ -11,6 +11,7 @@
   box-sizing: border-box;
 }
 .app {
+  min-width: 320px;
   font-family: Inter, Arial, sans-serif;
   color: #191919;
 }
