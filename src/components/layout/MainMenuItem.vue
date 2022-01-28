@@ -6,8 +6,8 @@
           <span>{{ menuItem.name }}</span>
           <div class="icon"
                :class="{'icon--down': showSubMenu}">
-            <arrow-icon :width="8"
-                           :height="12"/>
+            <arrow-icon width="8"
+                        height="12"/>
           </div>
         </div>
         <div v-if="menuItem.subMenu && showSubMenu"
@@ -47,13 +47,14 @@ export default {
 .menu-item {
   width: 100%;
   cursor: pointer;
+  font-size: 16px;
+  line-height: 24px;
 
   &__title {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 4px 40px 4px 32px;
-    font-size: 16px;
     font-weight: 700;
   }
 }
@@ -68,6 +69,8 @@ export default {
 }
 
 .hovered {
+  transition: background-color .3s ease;
+
   &:hover {
     background-color: #FACB64;
   }

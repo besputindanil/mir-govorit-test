@@ -10,10 +10,12 @@
                       :menu-item="item"/>
     </nav>
     <div class="user">
-      <img :src="userData.photoSrc"
-           width="48"
-           height="48"
-           alt="Фотография пользователя">
+      <div class="user__avatar">
+        <img :src="userData.photoSrc"
+             width="48"
+             height="48"
+             alt="Фотография пользователя">
+      </div>
       <div class="user__info">
         <span class="user__name">{{ userData.name }}</span>
         <div class="user__total">{{ userData.total }}</div>
@@ -51,7 +53,7 @@ export default {
         {name: 'Представители'},
       ],
       userData: {
-        photoSrc: require('../../assets/images/user-photo.jpg'),
+        photoSrc: require('../../assets/images/user-avatar.jpg'),
         name: 'Екатерина Иванова',
         total: '2 458 ⌘'
       }
@@ -84,6 +86,16 @@ export default {
   padding: 16px 32px;
   border-top: 1px solid #b8b8b8;
 
+  &__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
   &__info {
     display: flex;
     flex-direction: column;
@@ -94,12 +106,14 @@ export default {
 
   &__name {
     font-size: 14px;
+    line-height: 16px;
   }
 
   &__total {
     margin-top: 8px;
     padding: 4px 8px;
     font-size: 12px;
+    line-height: 16px;
     background-color: #FACB64;
     border-radius: 8px;
   }

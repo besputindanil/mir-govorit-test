@@ -19,12 +19,17 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 32px;
+  margin-bottom: 32px;
 }
 
 .title-wrapper {
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: 1050px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .title {
@@ -33,6 +38,10 @@ export default {
   &--sub {
     margin-left: 16px;
     color: #C4C4C4;
+
+    @media only screen and (max-width: 1050px) {
+      margin-left: 0;
+    }
   }
 }
 
